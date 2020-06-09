@@ -9,7 +9,7 @@
 #include <vector>
 
 #include "range.hpp"
-//#include "accumulate.hpp"
+#include "accumulate.hpp"
 //#include "filterfalse.hpp"
 //#include "compress.hpp"
 
@@ -24,19 +24,19 @@ struct lessThan3 {
 
 int main(int argc, const char * argv[]) {
     
-    cout << "####  range:  ####";
-	for (int i: range(5,9))
-		cout << i << " ";      // 5 6 7 8
+//    cout << "####  range:  ####";
+//	for (int i: range(5,9))
+//		cout << i << " ";      // 5 6 7 8
 
 //    vector<int> vecInt = {1,2,3,4};
-//    vector<string> vecString = {"Hello", "Bye", "Adam"};
+   vector<string> vecString = {"Hello", "Bye", "Adam"};
 //    vector<float> vecFloat = {-1, 0.3, 5.2, -8.3};
 //
-//    cout << "####  accumulate:  ####";
-//    cout << endl << "accumulate of range: " << endl;
-//	for (int i: accumulate(range(5,9)))
-//		cout << i << " ";      // 5 11 18 26
-//
+    cout << "####  accumulate:  ####";
+    cout << endl << "accumulate of range: " << endl;
+	for (int i: accumulate(range(5,9)))
+		cout << i << " ";      // 5 11 18 26
+
 //    cout << endl << "accumulate of vector<string>: " << endl;
 //    for (auto i: accumulate(vecString) )
 //        cout << i << " ";  // Hello HelloBye HelloByeAdam

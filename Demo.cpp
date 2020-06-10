@@ -6,7 +6,8 @@
 //
 
 #include <iostream>
-#include <vector>
+
+
 
 #include "range.hpp"
 #include "accumulate.hpp"
@@ -34,9 +35,11 @@ int main(int argc, const char * argv[]) {
 //
     cout << "####  accumulate:  ####";
 //    cout << endl << "accumulate of range: " << endl;
-	for (int i: accumulate(vecInt))
-		cout << i << " ";      // 5 11 18 26
+//	for (int i: accumulate(range(5,9)))
+//		cout << i << " ";      // 5 11 18 26
 
+    for (int i: accumulate(vecInt))
+        cout << i << " ";
 //    cout << endl << "accumulate of range with binary operator: " << endl;
 //	for (int i: accumulate(range(5,9), [](int x, int y){return x*y;}))
 //		cout << i << " ";      // 5 30 210 1680

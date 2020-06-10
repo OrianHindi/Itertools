@@ -4,40 +4,41 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <iterator>
 namespace itertools {
 
-    template<class T> class accumulate {
+    template<typename T>
+    class accumulate {
         const T& container;
-
     public:
         accumulate(const T& con): container(con){}
+        class iterator{
+            typename T::iterator iter;
+            decltype(*(container.begin())) sum;
 
-        template<class E> class iterator{
-            int sum=0;
-            const E& current;
         public:
-            iterator(const E& it) :current(it){
-                sum=*it;
+            iterator( typename T::iterator curr): iter(curr) {
+                sum=*iter;
             }
-
-            iterator& operator++(){
-                ++current;
-                sum+=*current;
+            iterator& operator++(){  //++iter
+                iter++;
+                sum = sum+*iter;
                 return *this;
             }
 
-            const iterator operator++(int){
+            const iterator operator++(int){ //iter++
                 iterator temp = *this;
-                ++current;
-                sum+=*current;
+                iter++;
+                sum = sum+*iter;
                 return temp;
             }
             bool operator==(const iterator &it) const {
-                return current == it.current;
+                return iter==it.iter;
             }
 
             bool operator!=(const iterator &it) const {
-                return current != it.current;
+                return iter!=it.iter;
+
             }
             auto operator*(){
                 return sum;
@@ -45,16 +46,14 @@ namespace itertools {
 
         };
 
+        iterator begin() {
+            return iterator(container.begin());
 
-
-        iterator<T> begin() {
-            return iterator<T>(container.begin());
         }
-        iterator<T> end() {
-            return iterator<T>(container.end());
+        iterator end() {
+            return iterator(container.end());
         }
     };
-
 
 
 

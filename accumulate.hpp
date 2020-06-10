@@ -2,44 +2,60 @@
 // Created by yirat on 08/06/2020.
 //
 #pragma once
+#include <iostream>
+#include <vector>
+namespace itertools {
 
-namespace itertools{
-    template <typename T> class accumulate{
-        T& iterable;
+    template<class T> class accumulate {
+        const T& container;
+
     public:
-        accumulate(T& it): iterable(it){}
+        accumulate(const T& con): container(con){}
 
-        class iterator{
-             T::iterator current; //if iterable=string<vector>  --->current = iterator vecrot<string>
+        template<class E> class iterator{
+            int sum=0;
+            const E& current;
         public:
-            iterator( current1): current(current1){}
-
-
-            iterator &operator++() {
-               current=current++;
-               for()
-
+            iterator(const E& it) :current(it){
+                sum=*it;
             }
 
+            iterator& operator++(){
+                ++current;
+                sum+=*current;
+                return *this;
+            }
 
+            const iterator operator++(int){
+                iterator temp = *this;
+                ++current;
+                sum+=*current;
+                return temp;
+            }
+            bool operator==(const iterator &it) const {
+                return current == it.current;
+            }
+
+            bool operator!=(const iterator &it) const {
+                return current != it.current;
+            }
+            auto operator*(){
+                return sum;
+            }
 
         };
 
 
-        iterator begin(){
-            return iterator(iterable.begin());
+
+        iterator<T> begin() {
+            return iterator<T>(container.begin());
         }
-
-        iterator end(){
-            return iterator(iterable.end());
+        iterator<T> end() {
+            return iterator<T>(container.end());
         }
-
-
-
     };
 
+
+
+
 }
-
-5,6,7,8,
-
-

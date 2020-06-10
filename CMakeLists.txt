@@ -3,4 +3,4 @@ project(itertools)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(itertools main.cpp)
+add_executable(itertools main.cpp accumulate.hpp)

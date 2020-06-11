@@ -86,10 +86,13 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/yirat/Desktop/C++/itertools/Demo.cpp">
+			<Option target="itertools"/>
+		</Unit>
 		<Unit filename="/home/yirat/Desktop/C++/itertools/accumulate.hpp">
 			<Option target="itertools"/>
 		</Unit>
-		<Unit filename="/home/yirat/Desktop/C++/itertools/main.cpp">
+		<Unit filename="/home/yirat/Desktop/C++/itertools/range.hpp">
 			<Option target="itertools"/>
 		</Unit>
 		<Unit filename="/home/yirat/Desktop/C++/itertools/CMakeLists.txt">

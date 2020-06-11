@@ -1,6 +1,9 @@
-//
-// Created by yirat on 08/06/2020.
-//
+////
+//// Created by yirat on 08/06/2020.
+////
+
+
+
 #pragma once
 namespace itertools {
     class range {
@@ -14,12 +17,13 @@ namespace itertools {
         public:
             iterator(int current_to_be = 0) : current(current_to_be) {}
 
+
             iterator &operator++() {
                 current = current + 1;
                 return *this;
             }
 
-            const iterator operator++(int) {
+             iterator operator++(int) {
                 iterator temp = *this;
                 current = current + 1;
                 return temp;
@@ -39,11 +43,11 @@ namespace itertools {
 
         };
 
-        iterator begin() const{
+        iterator begin(){
             return iterator(start);
         }
 
-        iterator end() const {
+        iterator end()  {
             return iterator(finish);
         }
 

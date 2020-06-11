@@ -1,5 +1,5 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/itertools.dir/main.cpp.o"
+  "CMakeFiles/itertools.dir/Demo.cpp.o"
   "itertools"
   "itertools.pdb"
 )

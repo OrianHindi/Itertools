@@ -6,13 +6,21 @@
 
 #IncludeRegexTransform: 
 
-/home/yirat/Desktop/C++/itertools/main.cpp
+/home/yirat/Desktop/C++/itertools/Demo.cpp
+iostream
+-
+range.hpp
+/home/yirat/Desktop/C++/itertools/range.hpp
+accumulate.hpp
+/home/yirat/Desktop/C++/itertools/accumulate.hpp
+
+/home/yirat/Desktop/C++/itertools/accumulate.hpp
 iostream
 -
 vector
 -
-string
+iterator
 -
-ostream
--
+
+/home/yirat/Desktop/C++/itertools/range.hpp
 

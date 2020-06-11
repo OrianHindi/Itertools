@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/yirat/Desktop/C++/itertools/main.cpp" "/home/yirat/Desktop/C++/itertools/cmake-build-debug/CMakeFiles/itertools.dir/main.cpp.o"
+  "/home/yirat/Desktop/C++/itertools/Demo.cpp" "/home/yirat/Desktop/C++/itertools/cmake-build-debug/CMakeFiles/itertools.dir/Demo.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "Clang")
 

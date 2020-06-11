@@ -57,27 +57,27 @@ include CMakeFiles/itertools.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/itertools.dir/flags.make
 
-CMakeFiles/itertools.dir/main.cpp.o: CMakeFiles/itertools.dir/flags.make
-CMakeFiles/itertools.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yirat/Desktop/C++/itertools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/itertools.dir/main.cpp.o"
-	/usr/bin/clang++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/itertools.dir/main.cpp.o -c /home/yirat/Desktop/C++/itertools/main.cpp
+CMakeFiles/itertools.dir/Demo.cpp.o: CMakeFiles/itertools.dir/flags.make
+CMakeFiles/itertools.dir/Demo.cpp.o: ../Demo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/yirat/Desktop/C++/itertools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/itertools.dir/Demo.cpp.o"
+	/usr/bin/clang++-9  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/itertools.dir/Demo.cpp.o -c /home/yirat/Desktop/C++/itertools/Demo.cpp
 
-CMakeFiles/itertools.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/itertools.dir/main.cpp.i"
-	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yirat/Desktop/C++/itertools/main.cpp > CMakeFiles/itertools.dir/main.cpp.i
+CMakeFiles/itertools.dir/Demo.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/itertools.dir/Demo.cpp.i"
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/yirat/Desktop/C++/itertools/Demo.cpp > CMakeFiles/itertools.dir/Demo.cpp.i
 
-CMakeFiles/itertools.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/itertools.dir/main.cpp.s"
-	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yirat/Desktop/C++/itertools/main.cpp -o CMakeFiles/itertools.dir/main.cpp.s
+CMakeFiles/itertools.dir/Demo.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/itertools.dir/Demo.cpp.s"
+	/usr/bin/clang++-9 $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/yirat/Desktop/C++/itertools/Demo.cpp -o CMakeFiles/itertools.dir/Demo.cpp.s
 
 # Object files for target itertools
 itertools_OBJECTS = \
-"CMakeFiles/itertools.dir/main.cpp.o"
+"CMakeFiles/itertools.dir/Demo.cpp.o"
 
 # External object files for target itertools
 itertools_EXTERNAL_OBJECTS =
 
-itertools: CMakeFiles/itertools.dir/main.cpp.o
+itertools: CMakeFiles/itertools.dir/Demo.cpp.o
 itertools: CMakeFiles/itertools.dir/build.make
 itertools: CMakeFiles/itertools.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/yirat/Desktop/C++/itertools/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable itertools"

@@ -4,4 +4,6 @@
 CMakeFiles/itertools.dir/Demo.cpp.o
  /home/yirat/Desktop/C++/itertools/Demo.cpp
  /home/yirat/Desktop/C++/itertools/accumulate.hpp
+ /home/yirat/Desktop/C++/itertools/compress.hpp
+ /home/yirat/Desktop/C++/itertools/filterfalse.hpp
  /home/yirat/Desktop/C++/itertools/range.hpp

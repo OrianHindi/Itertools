@@ -3,5 +3,7 @@
 
 CMakeFiles/itertools.dir/Demo.cpp.o: ../Demo.cpp
 CMakeFiles/itertools.dir/Demo.cpp.o: ../accumulate.hpp
+CMakeFiles/itertools.dir/Demo.cpp.o: ../compress.hpp
+CMakeFiles/itertools.dir/Demo.cpp.o: ../filterfalse.hpp
 CMakeFiles/itertools.dir/Demo.cpp.o: ../range.hpp
 

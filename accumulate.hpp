@@ -7,32 +7,40 @@
 #include <iterator>
 
 
+typedef struct {
+    template <typename T>
+    auto operator()(T& x , T& y) const{
+        return x+y;
+    }
+
+} add;
 
 namespace itertools {
 
-    template<class T>
+    template<class T,class FUNC = add>
     class accumulate {
-        T& container;
+         T& container;
+        const FUNC& function;
     public:
 
-        accumulate( T& con) : container(con){}
+        accumulate(T& con, const FUNC& f= add() ) : container(con),function(f){}
 
         class iterator{
-             typename T::iterator iter;
+            typename T::iterator iter;
             decltype(*(container.begin())) sum;
+           const  FUNC& func;
 
         public:
-            explicit iterator(typename T::iterator curr): iter(curr),sum(*iter) {}
-
+            iterator(typename T::iterator curr,const FUNC& f): iter(curr),sum(*iter),func(f) {}
 
             iterator& operator++(){  //++iter
-                sum+=*(++iter);
+                sum=func(sum,*(++iter));
                 return *this;
             }
 
             const iterator operator++(int){ //iter++
                 iterator temp = *this;
-                sum +=*(iter++);
+                sum=func(sum,*(iter++));
                 return temp;
             }
 
@@ -45,7 +53,7 @@ namespace itertools {
             }
 
             auto operator*(){
-                return this->sum;
+                return sum;
             }
 
             iterator& operator=(const iterator &temp_iter)
@@ -56,11 +64,11 @@ namespace itertools {
         };
 
         iterator begin() const {
-            return iterator(container.begin());
+            return iterator(container.begin(),function);
 
         }
         iterator end() const {
-            return iterator(container.end());
+            return iterator(container.end(),function);
         }
     };
 

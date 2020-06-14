@@ -35,38 +35,40 @@ int main(int argc, const char * argv[]) {
     vector<string> vecString = {"Hello", "Bye", "Adam"};
     vector<float> vecFloat = {-1, 0.3, 5.2, -8.3};
 //
-    cout << "####  accumulate:  ####";
-    cout << endl << "accumulate of vecString: " << endl;
-	for (auto i: accumulate(vecString))
-		cout << i << " ";      // 5 11 18 26
-cout<<"## accumulate of vecint"<<endl;
+    cout<<"## accumulate of vecint"<<endl;
     for (auto i: accumulate(vecInt))
         cout << i << " ";
     cout<<endl;
+    cout << "####  accumulate:  ####";
+
+
     cout<<"### acc(vecFloat) ####"<<endl;
     for (auto i: accumulate(vecFloat))
         cout << i << " ";
     cout<<endl;
-//    cout<<"### acc(range) ####"<<endl;
-//    for (auto i: accumulate(range(5,9)))
-//        cout << i << " ";
+    cout<<"### acc(range) ####"<<endl;
+    for (auto i: accumulate(range(5,9)))
+        cout << i << " ";
     cout << endl << "accumulate of range with binary operator: " << endl;
 	for (int i: accumulate(vecInt2, [](int x, int y){return x*y;}))
 		cout << i << " ";      // 5 30 210 1680
 //
-    cout<<endl;
-    cout << "####  Filter False:  ####"<<endl;
-    cout << endl << "Filter out all numbers less than 3 in vector{1,2,3,4}: " << endl;
-   for(int i =0;i<vecInt.size();i++){
-       cout<<"vec value in for"<<endl;
-       cout<<vecInt[i]<<" ";
+    cout << endl << "accumulate of vecString: " << endl;
+    for (auto i: accumulate(vecString))
+        cout << i << " ";      // 5 11 18 26
+//    cout<<endl;
+//    cout << "####  Filter False:  ####"<<endl;
+//    cout << endl << "Filter out all numbers less than 3 in vector{1,2,3,4}: " << endl;
+//   for(int i =0;i<vecInt.size();i++){
+//       cout<<"vec value in for"<<endl;
+//       cout<<vecInt[i]<<" ";
 
-   }
-    cout<<endl;
-    for (auto i: filterfalse(lessThan3{}, vecInt) )
-        cout << i << " ";   // 3 4
-    cout << endl;
-    cout<< "Filter out all even numbers in range(5,9): " << endl;
+   //}
+//    cout<<endl;
+//    for (auto i: filterfalse(lessThan3{}, vecInt) )
+//        cout << i << " ";   // 3 4
+//    cout << endl;
+//    cout<< "Filter out all even numbers in range(5,9): " << endl;
 //    for (auto i: filterfalse([](int i){return i%2==0;}, vecInt2) )
 //        cout << i << " ";   // 5 7
 //    cout << endl << endl;

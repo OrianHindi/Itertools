@@ -9,7 +9,7 @@
 
 typedef struct {
     template <typename T>
-    auto operator()(T& x , T& y) const{
+    auto operator()(const T& x , const T& y) const{
         return x+y;
     }
 
@@ -19,28 +19,33 @@ namespace itertools {
 
     template<class T,class FUNC = add>
     class accumulate {
-         T& container;
+         const  T& container;
         const FUNC& function;
     public:
 
-        accumulate(T& con, const FUNC& f= add() ) : container(con),function(f){}
+        accumulate(const T& con, const FUNC& f= add() ) : container(con),function(f){}
 
         class iterator{
-            typename T::iterator iter;
-            decltype(*(container.begin())) sum;
-           const  FUNC& func;
+            decltype(container.begin()) iter;
+            typename std::decay<decltype(*(container.begin()))>::type sum;
+            const accumulate& acc;
+         //   const  FUNC& func;
 
         public:
-            iterator(typename T::iterator curr,const FUNC& f): iter(curr),sum(*iter),func(f) {}
+            iterator(decltype(container.begin()) curr,const accumulate& acc): iter(curr),acc(acc) {
+                if (curr != acc.container.end())sum = *curr;
+            }
 
             iterator& operator++(){  //++iter
-                sum=func(sum,*(++iter));
+                ++iter;
+                if(iter==acc.container.end())return *this;
+                sum=acc.function(sum,*iter);
                 return *this;
             }
 
             const iterator operator++(int){ //iter++
                 iterator temp = *this;
-                sum=func(sum,*(iter++));
+                sum=acc.function(sum,*(iter++));
                 return temp;
             }
 
@@ -64,11 +69,11 @@ namespace itertools {
         };
 
         iterator begin() const {
-            return iterator(container.begin(),function);
+            return iterator(container.begin(),*this);
 
         }
         iterator end() const {
-            return iterator(container.end(),function);
+            return iterator(container.end(),*this);
         }
     };
 

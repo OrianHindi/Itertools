@@ -43,11 +43,11 @@ namespace itertools {
 
         };
 
-        iterator begin(){
+        iterator begin() const{
             return iterator(start);
         }
 
-        iterator end()  {
+        iterator end() const {
             return iterator(finish);
         }
 

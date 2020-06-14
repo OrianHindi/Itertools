@@ -2,3 +2,80 @@
 // Created by yirat on 08/06/2020.
 //
 #pragma once
+#include <iostream>
+
+namespace itertools{
+    template <typename T1 , typename T2>
+    class compress{
+        const T1& container1;
+        const T2& container2;
+    public:
+        compress(const T1& c1 , const T2& c2) : container1(c1) , container2(c2){}
+
+        class iterator{
+            decltype(container1.begin()) iter1;
+            decltype(container2.begin()) iter2;
+            const compress& comp;
+        public:
+            iterator(decltype(container1.begin()) it1 , decltype(container2.begin()) it2 , const compress& c)
+            : iter1(it1) , iter2(it2) , comp(c){
+                std::cout<<"IM AT ctor"<<std::endl;
+           //     std::cout<<std::boolalpha<<*iter2<<","<<"val:"<<*iter1<<std::endl;
+                while(iter2!=comp.container2.end() && *iter2==false) {
+                    iter1++;
+                    iter2++;
+                }
+            }
+
+            iterator& operator++(){
+            std::cout<<"IM AT ++ operator"<<std::endl;
+                ++iter1;
+                ++iter2;
+             //   std::cout<<std::boolalpha<<*iter2<<","<<"val:"<<*iter1<<std::endl;
+             std::cout<<"before whike in ++"<<std::endl;
+                while(iter2!=comp.container2.end() && *iter2==0) {
+                    std::cout<<"im in the while"<<std::endl;
+                    iter1++;
+                    iter2++;
+                }
+                return *this;
+            }
+
+            const iterator operator++(int){
+                std::cout<<"IM AT ++(int) operator"<<std::endl;
+                iterator temp = *this;
+                ++iter1;
+                ++iter2;
+                return temp;
+            }
+
+            bool operator==(const iterator& it) const{
+                std::cout<<"IM AT == operator"<<std::endl;
+                return iter1==it.iter1;
+            }
+
+            bool operator!=(const iterator& it) const{
+                std::cout<<"IM AT != operator"<<std::endl;
+                return iter1!=it.iter1;
+            }
+
+            auto operator*(){
+            std::cout<<"IM AT * operator"<<std::endl;
+                return *iter1;
+            }
+
+        };
+
+        iterator begin() const{
+            std::cout<<"IM AT begin"<<std::endl;
+            return iterator(container1.begin(),container2.begin(),*this);
+        }
+
+        iterator end() const {
+            std::cout<<"IM AT end"<<std::endl;
+            return iterator(container1.end(),container2.end(),*this);
+        };
+
+
+    };
+}

@@ -56,23 +56,22 @@ int main(int argc, const char * argv[]) {
     cout << endl << "accumulate of vecString: " << endl;
     for (auto i: accumulate(vecString))
         cout << i << " ";      // 5 11 18 26
-//    cout<<endl;
-//    cout << "####  Filter False:  ####"<<endl;
-//    cout << endl << "Filter out all numbers less than 3 in vector{1,2,3,4}: " << endl;
-//   for(int i =0;i<vecInt.size();i++){
-//       cout<<"vec value in for"<<endl;
-//       cout<<vecInt[i]<<" ";
+    cout<<endl;
+    cout << "####  Filter False:  ####"<<endl;
+    cout << endl << "Filter out all numbers less than 3 in vector{1,2,3,4}: " << endl;
+   for(int i =0;i<vecInt.size();i++){
+       cout<<"vec value in for"<<vecInt[i]<<endl;
 
-   //}
-//    cout<<endl;
-//    for (auto i: filterfalse(lessThan3{}, vecInt) )
-//        cout << i << " ";   // 3 4
-//    cout << endl;
-//    cout<< "Filter out all even numbers in range(5,9): " << endl;
-//    for (auto i: filterfalse([](int i){return i%2==0;}, vecInt2) )
-//        cout << i << " ";   // 5 7
-//    cout << endl << endl;
-//
+   }
+    cout<<"Filterfalse less then3,vecInt"<<endl;
+   for (auto i: filterfalse(lessThan3{}, vecInt) )
+        cout << i << " ";   // 3 4
+    cout << endl;
+    cout<< "Filter out all even numbers in range(5,9): " << endl;
+    for (auto i: filterfalse([](int i){return i%2==0;}, vecInt2) )
+        cout << i << " ";   // 5 7
+    cout << endl << endl;
+
 //    cout << "####  compress:  ####";
 //    cout << endl << "compress a string" << endl;
 //    for (auto i: compress(string("abcd"), vector<bool>({true,true,false,true})) )

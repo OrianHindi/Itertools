@@ -6,20 +6,22 @@
 namespace itertools{
     template<typename FUNC,typename T>
     class filterfalse{
-        T& container;
+        const T& container;
         const FUNC& function;
     public:
-        filterfalse(const FUNC& func,T& con):function(func),container(con){}
+        filterfalse(const FUNC& func,const T& con):function(func),container(con){}
 
         class iterator{
-            typename T::iterator iter;
-           // const FUNC& func;
-           const filterfalse& filter;
+            decltype(container.begin()) iter;
+            const filterfalse& filter;
         public:
-            iterator(typename T::iterator it , const filterfalse& f):iter(it) , filter(f){}
+            iterator(decltype(container.begin()) it , const filterfalse& f):iter(it) , filter(f){
+                while(iter!=filter.container.end() && filter.function(*iter)) iter++;
+            }
 
             iterator& operator++(){
                 ++iter;
+                while(iter!=filter.container.end() && filter.function(*iter))++iter ;
                 return *this;
             }
 
@@ -29,20 +31,15 @@ namespace itertools{
                 return temp;
             }
 
-            bool operator==(const iterator it) const{
+            bool operator==(const iterator& it) const{
                 return iter==it.iter;
             }
 
-            bool operator!=(const iterator it) const{
+            bool operator!=(const iterator& it) const{
                 return iter!=it.iter;
             }
 
             auto operator*(){
-                std::cout<<"before the while: "<<*iter<<std::endl;
-                while(filter.function(*iter) && *this!=filter.end()){
-                std::cout<<"im in while, *iter="<<*iter<<std::endl;
-                ++(*this);
-            }
                 return *iter;
             }
         };

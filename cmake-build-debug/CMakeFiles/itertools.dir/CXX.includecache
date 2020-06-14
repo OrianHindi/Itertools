@@ -1,0 +1,34 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/yirat/Desktop/C++/itertools/Demo.cpp
+iostream
+-
+range.hpp
+/home/yirat/Desktop/C++/itertools/range.hpp
+accumulate.hpp
+/home/yirat/Desktop/C++/itertools/accumulate.hpp
+filterfalse.hpp
+/home/yirat/Desktop/C++/itertools/filterfalse.hpp
+compress.hpp
+/home/yirat/Desktop/C++/itertools/compress.hpp
+
+/home/yirat/Desktop/C++/itertools/accumulate.hpp
+iostream
+-
+vector
+-
+iterator
+-
+
+/home/yirat/Desktop/C++/itertools/compress.hpp
+
+/home/yirat/Desktop/C++/itertools/filterfalse.hpp
+
+/home/yirat/Desktop/C++/itertools/range.hpp
+

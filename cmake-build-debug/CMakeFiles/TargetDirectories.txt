@@ -1,3 +1,3 @@
-/home/orian/CLionProjects/Itertools/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/orian/CLionProjects/Itertools/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/orian/CLionProjects/Itertools/cmake-build-debug/CMakeFiles/itertools.dir
+/home/yirat/Desktop/C++/itertools/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/yirat/Desktop/C++/itertools/cmake-build-debug/CMakeFiles/itertools.dir
+/home/yirat/Desktop/C++/itertools/cmake-build-debug/CMakeFiles/edit_cache.dir

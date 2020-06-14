@@ -29,7 +29,7 @@ namespace itertools {
             decltype(container.begin()) iter;
             typename std::decay<decltype(*(container.begin()))>::type sum;
             const accumulate& acc;
-         //   const  FUNC& func;
+
 
         public:
             iterator(decltype(container.begin()) curr,const accumulate& acc): iter(curr),acc(acc) {

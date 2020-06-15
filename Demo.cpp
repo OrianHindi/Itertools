@@ -74,12 +74,15 @@ int main(int argc, const char * argv[]) {
 
     cout << "####  compress:  ####";
     cout << endl << "compress a string" << endl;
-    for (auto i: compress(string("abcd"), vector<bool>({true,true,false,true})) )
-        cout << i << " ";  // a b d
-    cout << endl << "compress a range" << endl;
-    for (auto i: compress(range(5,9), vector<bool>({true,true,false,true})) )
+    vector<bool> ans ={true,true,false,true};
+    for (auto i: compress(range(5,9),ans))
         cout << i << " ";  // 5 6 8
     cout << endl << endl;
+
+    for (auto i: compress(string("abcd"),ans))
+        cout << i << " ";  // a b d
+    cout << endl << "compress a range" << endl;
+
 //
 //
 //    cout << endl;

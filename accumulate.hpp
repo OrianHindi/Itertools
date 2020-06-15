@@ -6,7 +6,6 @@
 #include <vector>
 #include <iterator>
 
-
 typedef struct {
     template <typename T>
     auto operator()(const T& x , const T& y) const{
